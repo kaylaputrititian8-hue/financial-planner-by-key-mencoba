@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financial Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar" aria-label="Navigasi utama">
+  <div class="brand">Financial Planner</div>
+  <nav id="nav">
+    <button data-a="nav" data-id="dashboard">▦ Dashboard</button>
+    <button data-a="nav" data-id="planner">◎ Planner</button>
+    <button data-a="nav" data-id="wallet">▣ Wallet</button>
+    <button data-a="nav" data-id="income">↓ Pendapatan</button>
+    <button data-a="nav" data-id="expense">↑ Pengeluaran</button>
+    <button data-a="nav" data-id="debt">⇄ Hutang</button>
+    <button data-a="nav" data-id="bill">☰ Tagihan</button>
+  </nav>
+  <div class="side-foot">
+    <button class="btn" data-a="export">Export JSON</button>
+    <label class="btn" tabindex="0">Import JSON<input type="file" id="imp" accept=".json" hidden></label>
+    <button class="btn" data-a="clearSeed">Hapus data contoh</button>
+    <button class="btn danger" data-a="reset">Reset data</button>
+  </div>
+</aside>
+<div class="main">
+  <header class="top">
+    <h1 id="title">Dashboard</h1>
+    <div class="tools">
+      <label class="inl">Bulan <input type="month" id="month"></label>
+      <button class="btn p" data-a="quick" data-id="in">+ Pemasukan</button>
+      <button class="btn p" data-a="quick" data-id="out">+ Pengeluaran</button>
+      <button class="btn" data-a="theme" aria-label="Ganti tema">◐</button>
+    </div>
+  </header>
+  <main id="view"></main>
+</div>
+<dialog id="modal"></dialog>
+<div id="toasts" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
